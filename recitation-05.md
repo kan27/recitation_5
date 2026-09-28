@@ -79,7 +79,6 @@ We can use `scan` to create the needed list. You may need to adjust slightly the
 > **put in answers.md**
 
 .  
-.  
 . 
 
 

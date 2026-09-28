@@ -30,6 +30,10 @@ def count_values(a, k):
     [2, 3, 2, 1]
     """
     ###TODO
+    values = [0] * (k+1) #values hold 0's based on the given maximum from 0 --> max
+    for i in a:
+        values[i] +=1
+    return values
     pass
     
 def get_positions(counts):
@@ -44,6 +48,8 @@ def get_positions(counts):
     [0, 2, 5, 7]    
     """
     ###TODO
+    positions = scan(plus, 0, counts)[0] #scan returns tuple
+    return [0] + positions[:-1]
     pass
     
 def construct_output(a, positions):
@@ -61,6 +67,11 @@ def construct_output(a, positions):
     [0,0,1,1,1,2,2,3]    
     """
     ###TODO
+    output = [0]*len(a)
+    for i in a:
+        output[positions[i]] = i
+        positions[i] +=1
+    return output
     pass
 
 def count_values_mr(a, k):
@@ -76,10 +87,14 @@ def count_map(value):
     # hint: this function should return a list, even if that list
     # contains a single tuple
     ###TODO
+    return [(value, 1)]
     pass
 
 def count_reduce(group):
     ###TODO
+    value = group[0]
+    counts = group[1]
+    return (value, reduce(plus, 0, counts))
     pass
 
 
